@@ -1,2 +1,2 @@
 # liszt
-Functional list utilities
+Functional array utilities

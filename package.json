@@ -1,0 +1,22 @@
+{
+  "name": "liszt",
+  "version": "1.0.0",
+  "description": "Functional array utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickjohnson-dev/liszt.git"
+  },
+  "author": {
+    "name": "Nick Johnson",
+    "email": "nickjohnson.dev@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nickjohnson-dev/liszt/issues"
+  },
+  "homepage": "https://github.com/nickjohnson-dev/liszt#readme"
+}

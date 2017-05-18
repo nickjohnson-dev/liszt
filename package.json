@@ -1,10 +1,17 @@
 {
   "name": "liszt",
   "version": "1.0.0",
-  "description": "Functional array utilities",
-  "main": "index.js",
+  "description": "Functional list helpers",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src --out-dir dist --ignore test.js",
+    "clean": "rimraf dist",
+    "lint": "eslint src",
+    "prebuild": "yarn run clean -s",
+    "prerelease": "yarn run lint -s && yarn run testonce -s && yarn run build -s",
+    "release": "yarn publish",
+    "test": "ava --watch",
+    "testonce": "ava"
   },
   "repository": {
     "type": "git",
@@ -18,5 +25,29 @@
   "bugs": {
     "url": "https://github.com/nickjohnson-dev/liszt/issues"
   },
-  "homepage": "https://github.com/nickjohnson-dev/liszt#readme"
+  "homepage": "https://github.com/nickjohnson-dev/liszt#readme",
+  "devDependencies": {
+    "ava": "0.18.1",
+    "babel-cli": "6.22.2",
+    "babel-core": "6.22.0",
+    "babel-eslint": "7.1.1",
+    "babel-preset-es2015": "6.22.0",
+    "babel-preset-es2017": "6.22.0",
+    "babel-preset-stage-3": "6.22.0",
+    "eslint": "3.15.0",
+    "eslint-config-airbnb-base": "11.1.0",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-lodash-fp": "2.1.3",
+    "rimraf": "^2.6.1",
+    "sinon": "^2.2.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
 }
